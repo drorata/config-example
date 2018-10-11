@@ -8,8 +8,10 @@ class Config:
         self.__dict__ = Config.__state
         if self.__dict__ == {}:
             if env is None:
-                raise ValueError('Init of Config. `env` must be provided')
-            self.__set_config(env)
+                # New instance. Still not initialized
+                return
+            else:
+                self.__set_config(env)
 
     def __set_config(self, env):
         with open(env, 'r') as f:

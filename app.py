@@ -1,6 +1,6 @@
 from config import Config
-config = Config('./test.json')
 import mod
+config = Config('./test.json')
 
 
 print("In app: " + str(config.env))
